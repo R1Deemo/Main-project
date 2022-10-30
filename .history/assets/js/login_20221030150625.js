@@ -44,24 +44,18 @@ $(function() {
         // 监听表单登录
     $('.login-box').submit(function(e) {
         e.preventDefault()
-        var data = {
-            username: $('#form-login [name=username]').val(),
-            password: $('#form-login [name=password]').val(),
-        }
         $.ajax({
             url: 'http://www.liulongbin.top:3007/api/login',
             method: 'post',
             // 快速获取表单中的数据
-            data: data,
+            data: $(this).serialize(),
             success: function(res) {
                 if (res.status !== 0) {
                     return layer.msg('登录失败')
                 }
                 layer.msg('登录成功')
-                    // console.log(res.token)
-                    // 将token存储
-                localStorage.setItem('token', res.token)
-                location.href = '/index.html'
+                console.log(res)
+                    // location.href
             }
         })
     })

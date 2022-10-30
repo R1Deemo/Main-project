@@ -58,9 +58,7 @@ $(function() {
                     return layer.msg('登录失败')
                 }
                 layer.msg('登录成功')
-                    // console.log(res.token)
-                    // 将token存储
-                localStorage.setItem('token', res.token)
+                console.log(res.token)
                 location.href = '/index.html'
             }
         })

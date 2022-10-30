@@ -45,8 +45,8 @@ $(function() {
     $('.login-box').submit(function(e) {
         e.preventDefault()
         var data = {
-            username: $('#form-login [name=username]').val(),
-            password: $('#form-login [name=password]').val(),
+            username: $('#login-box [name=username]').val(),
+            password: $('#login-box [name=password]').val(),
         }
         $.ajax({
             url: 'http://www.liulongbin.top:3007/api/login',
@@ -54,14 +54,12 @@ $(function() {
             // 快速获取表单中的数据
             data: data,
             success: function(res) {
-                if (res.status !== 0) {
-                    return layer.msg('登录失败')
-                }
+                // if (res.status !== 0) {
+                //     return layer.msg('登录失败')
+                // }
                 layer.msg('登录成功')
-                    // console.log(res.token)
-                    // 将token存储
-                localStorage.setItem('token', res.token)
-                location.href = '/index.html'
+                console.log(res.token)
+                    // location.href
             }
         })
     })
