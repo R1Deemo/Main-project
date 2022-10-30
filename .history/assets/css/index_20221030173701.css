@@ -1,0 +1,8 @@
+#logo {
+    background: url(/assets/images/logo.png) no-repeat center;
+}
+
+.layui-footer {
+    text-align: center;
+    font-size: 12px;
+}
