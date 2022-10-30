@@ -29,11 +29,10 @@ $(function() {
     // 监听注册表单的提交
     $('#form-reg').on('submit', function(e) {
         e.preventDefault();
-        var data = {
+        $.post('http://www.liulongbin.top:3007/api/reguser', {
             username: $('#form-reg [name=username]').val(),
             password: $('#form-reg [name=repassword]').val(),
-        }
-        $.post('http://www.liulongbin.top:3007/api/reguser', data, function(res) {
+        }, function(res) {
             if (res.status !== 0) {
                 return layer.msg(res.message)
             }
