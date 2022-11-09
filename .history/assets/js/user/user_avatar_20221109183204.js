@@ -49,11 +49,10 @@ $(function() {
                     avatar: dataURL
                 },
                 success: function(res) {
-                    if (res.status !== 0) {
+                    if (res.seatus !== 0) {
                         return layer.msg('更换失败')
                     }
                     return layer.msg('更换成功')
-                    window.parent.getUserInfo()
                 }
             })
         })
