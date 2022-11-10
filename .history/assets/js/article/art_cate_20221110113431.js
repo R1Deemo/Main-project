@@ -45,7 +45,7 @@ $(function() {
             method: 'get',
             url: '/my/article/cates/' + id,
             success: function(res) {
-                form.val('form-edit', res.data)
+
             }
         })
 

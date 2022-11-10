@@ -1,6 +1,5 @@
 $(function() {
     var layer = layui.layer
-    var form = layui.form
     initArtCateList()
 
     //为添加类别加入事件
@@ -40,17 +39,9 @@ $(function() {
             content: $('#dialog-edit').html(),
 
         })
-        var id = $(this).attr('data-id')
-        $.ajax({
-            method: 'get',
-            url: '/my/article/cates/' + id,
-            success: function(res) {
-                form.val('form-edit', res.data)
-            }
-        })
+
 
     })
-
 
     function initArtCateList() {
         $.ajax({
