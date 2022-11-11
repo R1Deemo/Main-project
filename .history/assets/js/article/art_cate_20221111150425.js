@@ -85,19 +85,11 @@ $(function() {
         layer.confirm('是否删除', { icon: 3, title: '删除' }, function(index) {
 
             $.ajax({
-                method: 'get',
-                url: '/my/article/deletecate/' + id,
-                success: function(res) {
-                    if (res.status !== 0) {
-                        return layer.msg('删除分类失败')
-                    }
-                    layer.msg('删除分类成功')
-                    layer.close(index)
-                    initArtCateList()
-                }
+                method: 'post',
+                url: '/my/article/delete'
             })
 
-
+            layer.close(index)
         })
     })
 

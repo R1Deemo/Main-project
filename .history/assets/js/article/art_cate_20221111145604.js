@@ -31,9 +31,8 @@ $(function() {
             })
         })
         //通过代理的形式为btn-edit绑定点击事件
-    var indexEdit = null
     $('tbody').on('click', '#btn-edit', function() {
-
+            var indexEdit = null
             indexEdit = layer.open({
                 type: 1,
                 area: ['500px', '250px'],
@@ -78,27 +77,5 @@ $(function() {
             }
         })
     }
-    //通过代理的形式为删除按钮代理事件
-    $('tbody').on('click', '.btn-delete', function() {
-        var id = $(this).attr('data-id')
-            //提示是否要删除
-        layer.confirm('是否删除', { icon: 3, title: '删除' }, function(index) {
-
-            $.ajax({
-                method: 'get',
-                url: '/my/article/deletecate/' + id,
-                success: function(res) {
-                    if (res.status !== 0) {
-                        return layer.msg('删除分类失败')
-                    }
-                    layer.msg('删除分类成功')
-                    layer.close(index)
-                    initArtCateList()
-                }
-            })
-
-
-        })
-    })
 
 })

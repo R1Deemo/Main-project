@@ -86,7 +86,7 @@ $(function() {
 
             $.ajax({
                 method: 'get',
-                url: '/my/article/deletecate/' + id,
+                url: '/my/article/deletecate' + 'id',
                 success: function(res) {
                     if (res.status !== 0) {
                         return layer.msg('删除分类失败')
