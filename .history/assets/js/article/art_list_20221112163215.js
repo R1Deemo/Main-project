@@ -41,7 +41,7 @@ $(function() {
             },
             success: function(res) {
                 // console.log(q)
-                // console.log(res)
+                console.log(res)
                 if (res.status !== 0) {
                     return layer.msg('获取文章列表失败')
                 }
@@ -55,20 +55,20 @@ $(function() {
 
     //通过代理的形式为删除按钮代理事件
     $('tbody').on('click', '.btn-delete', function() {
-        var id = $(this).attr('data-id')
+        var id = $(this).attr('data-article_id')
             //提示是否要删除
         layer.confirm('是否删除', { icon: 3, title: '删除' }, function(index) {
 
             $.ajax({
                 method: 'get',
-                url: '/my/article/delete/' + id,
+                url: '/my/article/deletecate/' + id,
                 success: function(res) {
                     if (res.status !== 0) {
-                        return layer.msg('删除文章失败')
+                        return layer.msg('删除分类失败')
                     }
-                    layer.msg('删除文章成功')
+                    layer.msg('删除分类成功')
                     layer.close(index)
-                    initTabel()
+                    initArtCateList()
                 }
             })
 

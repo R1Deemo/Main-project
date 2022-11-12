@@ -41,7 +41,7 @@ $(function() {
             },
             success: function(res) {
                 // console.log(q)
-                // console.log(res)
+                console.log(res)
                 if (res.status !== 0) {
                     return layer.msg('获取文章列表失败')
                 }
@@ -55,7 +55,7 @@ $(function() {
 
     //通过代理的形式为删除按钮代理事件
     $('tbody').on('click', '.btn-delete', function() {
-        var id = $(this).attr('data-id')
+        var id = $(this).attr('data-article_id')
             //提示是否要删除
         layer.confirm('是否删除', { icon: 3, title: '删除' }, function(index) {
 

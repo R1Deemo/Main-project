@@ -74,28 +74,8 @@ $(function() {
             .toBlob(function(blob) { // 将 Canvas 画布上的内容，转化为文件对象
                 // 得到文件对象后，进行后续的操作
                 fd.append('cover_img', blob)
-                    // 发起ajax请求
-                publishArticle(fd)
             })
     })
-
-    function publishArticle(fd) {
-        $.ajax({
-            method: 'post',
-            url: '/my/article/add',
-            data: fd,
-            // 如果提交的是formdata格式的数据,必须添加两个配置项
-            contentType: false,
-            processData: false,
-            success: function(res) {
-                if (res.status !== 0) {
-                    return layer.msg('发布文章失败')
-                }
-                layer.msg('发表文章成功')
-                location.href = '/article/art_list.html'
-            }
-        })
-    }
 
 
 })

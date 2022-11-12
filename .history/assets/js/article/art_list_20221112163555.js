@@ -41,7 +41,7 @@ $(function() {
             },
             success: function(res) {
                 // console.log(q)
-                // console.log(res)
+                console.log(res)
                 if (res.status !== 0) {
                     return layer.msg('获取文章列表失败')
                 }
